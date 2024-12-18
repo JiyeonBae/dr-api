@@ -1,0 +1,172 @@
+{
+    "umap_pca": {
+        "bounds": { "n_neighbors": [2, 100], "min_dist": [0.01, 0.99] },
+        "scal": { "n_neighbors": 15, "min_dist": 0.1 },
+        "default": { "n_neighbors": 15, "min_dist": 0.1 }
+    },
+    "umap": {
+        "bounds": { "n_neighbors": [2, 100], "min_dist": [0.01, 0.99] },
+        "scal": { "n_neighbors": 15, "min_dist": 0.1 },
+        "default": { "n_neighbors": 15, "min_dist": 0.1 }
+    },
+    "pacmap": {
+        "bounds": { "n_neighbors": [2, 100], "MN_ratio": [0.1, 5], "FP_ratio": [0.1, 5] },
+        "scal": { "n_neighbors": 15, "MN_ratio": 0.5, "FP_ratio": 2.0 },
+        "default": { "n_neighbors": 10, "MN_ratio": 0.5, "FP_ratio": 2.0 }
+    },
+    "trimap": {
+        "bounds": { "n_inliers": [2, 100], "n_outliers": [2, 10] },
+        "scal": { "n_inliers": 12, "n_outliers": 4 },
+        "default": { "n_inliers": 12, "n_outliers": 4 }
+    },
+    "tsne": {
+        "bounds": { "perplexity": [5, 50] },
+        "scal": { "perplexity": 30 },
+        "default": { "perplexity": 30 }
+    },
+    "umato": {
+        "bounds": { "n_neighbors": [2, 100], "min_dist": [0.01, 0.99], "hub_num": [20, 400] },
+        "scal": { "n_neighbors": 15, "min_dist": 0.1, "hub_num": 75 },
+        "default": { "n_neighbors": 15, "min_dist": 0.1, "hub_num": 75 }
+    },
+    "pca": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "mds": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "isomap": {
+        "bounds": { "n_neighbors": [2, 100] },
+        "scal": { "n_neighbors": 15 },
+        "default": { "n_neighbors": 15 }
+    },
+    "lle": {
+        "bounds": { "n_neighbors": [2, 100] },
+        "scal": { "n_neighbors": 15 },
+        "default": { "n_neighbors": 15 }
+    },
+    "lamp": {
+        "bounds": {},
+        "scal": {},
+        "default": {}
+    },
+    "lmds": {
+        "bounds": { "hub_num": [20, 400] },
+        "scal": { "hub_num": 75 },
+        "default": { "hub_num": 75 }
+    },
+    "ae": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "fa": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "fica": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "grp": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "hlle": {
+        "bounds": {"n_neighbors": [7, 11] },
+        "default": {"n_neighbors": 7 },
+        "scal": {"n_neighbors": 7 }
+    },
+    "ipca": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "kpcarbf": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "kpcasig": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "ltsa": {
+        "bounds": {"n_neighbors": [5, 11] },
+        "default": {"n_neighbors": 5 },
+        "scal": {"n_neighbors": 5 }
+    },
+    "le": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "mlle": {
+        "bounds": {"n_neighbors": [5, 11] },
+        "default": {"n_neighbors": 5 },
+        "scal": {"n_neighbors": 5 }
+    },
+    "nmds": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "nmf": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "nmf_nndsvdar": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "spca": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "srp": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "tsvd": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "tapkee_dm": {
+        "bounds": {"t": [2, 10], "width": [1.0, 10.0]},
+        "default": {"t": 2, "width": 1.0 },
+        "scal": {"t": 2, "width": 1.0 }
+    },
+    "tapkee_lltsa": {
+        "bounds": {"n_neighbors": [4, 11] },
+        "default": {"n_neighbors": 10 },
+        "scal": {"n_neighbors": 10 }
+    },
+    "tapkee_lmds": {
+        "bounds": {"n_neighbors": [4, 11] },
+        "default": {"n_neighbors": 10 },
+        "scal": {"n_neighbors": 10 }
+    },
+    "tapkee_lpp": {
+        "bounds": {"n_neighbors": [4, 11] },
+        "default": {"n_neighbors": 10 },
+        "scal": {"n_neighbors": 10 }
+    },
+    "tapkee_spe": {
+        "bounds": {"n_neighbors": [6, 18], "n_updates": [20, 70] },
+        "default": {"n_neighbors": 12, "n_updates": 20 },
+        "scal": {"n_neighbors": 12, "n_updates": 20 }
+    } 
+}
