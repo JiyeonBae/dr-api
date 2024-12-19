@@ -164,13 +164,13 @@ def run_tsvd(X):
     return reducer.fit_transform(X)
 
 #tapkee
-def run_tapkee_dm(X, t, width):
+def run_dm(X, t, width):
     t = int(t)
     width = float(width)
     reducer = tapkee.DiffusionMaps(t=t, width=width)
     return reducer.fit_transform(X)
 
-def run_tapkee_lltsa(X, n_neighbors):
+def run_lltsa(X, n_neighbors):
     n_neighbors = int(n_neighbors)
     reducer = tapkee.LinearLocalTangentSpaceAlignment(n_neighbors=n_neighbors)
     return reducer.fit_transform(X)
@@ -180,12 +180,12 @@ def run_tapkee_lmds(X, n_neighbors):
     reducer = tapkee.LandmarkMDS(n_neighbors=n_neighbors)
     return reducer.fit_transform(X)
 
-def run_tapkee_lpp(X, n_neighbors):
+def run_lpp(X, n_neighbors):
     n_neighbors = int(n_neighbors)
     reducer = tapkee.LocalityPreservingProjections(n_neighbors=n_neighbors)
     return reducer.fit_transform(X)
 
-def run_tapkee_spe(X, n_neighbors, n_updates):
+def run_spe(X, n_neighbors, n_updates):
     n_neighbors = int(n_neighbors)
     n_updates = int(n_updates)
     reducer = tapkee.StochasticProximityEmbedding(n_neighbors=n_neighbors, n_updates=n_updates)
@@ -230,4 +230,3 @@ def run_lmvu(X, k1, k2):
     k2 = int(k2)
     reducer = drtoolbox.LandmarkMVU(k1=k1, k2=k2)
     return reducer.fit_transform(X)
-
