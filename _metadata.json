@@ -1,13 +1,8 @@
 {
-    "umap_pca": {
-        "bounds": { "n_neighbors": [2, 100], "min_dist": [0.01, 0.99] },
-        "scal": { "n_neighbors": 15, "min_dist": 0.1 },
-        "default": { "n_neighbors": 15, "min_dist": 0.1 }
-    },
     "umap": {
-        "bounds": { "n_neighbors": [2, 100], "min_dist": [0.01, 0.99] },
-        "scal": { "n_neighbors": 15, "min_dist": 0.1 },
-        "default": { "n_neighbors": 15, "min_dist": 0.1 }
+        "bounds": { "n_neighbors": [2, 100], "min_dist": [0.01, 0.99], "init": ["spectral", "random"] },
+        "scal": { "n_neighbors": 15, "min_dist": 0.1, "init": "spectral" },
+        "default": { "n_neighbors": 15, "min_dist": 0.1, "init": "spectral" }
     },
     "pacmap": {
         "bounds": { "n_neighbors": [2, 100], "MN_ratio": [0.1, 5], "FP_ratio": [0.1, 5] },
@@ -60,9 +55,9 @@
         "default": { "hub_num": 75 }
     },
     "ae": {
-        "bounds": {},
-        "default": {},
-        "scal": {}
+        "bounds": { "model_size": ["SMALL", "MEDIUM", "LARGE"] },
+        "default": { "model_size": "SMALL" },
+        "scal": { "model_size": "SMALL" }
     },
     "fa": {
         "bounds": {},
@@ -80,14 +75,19 @@
         "scal": {}
     },
     "hlle": {
-        "bounds": {"n_neighbors": [7, 11] },
-        "default": {"n_neighbors": 7 },
-        "scal": {"n_neighbors": 7 }
+        "bounds": { "n_neighbors": [7, 11] },
+        "default": { "n_neighbors": 7 },
+        "scal": { "n_neighbors": 7 }
     },
     "ipca": {
         "bounds": {},
         "default": {},
         "scal": {}
+    },
+    "kpcapol": {
+        "bounds": { "degree": [2, 5] },
+        "default": { "degree": 3 },
+        "scal": { "degree": 3 }
     },
     "kpcarbf": {
         "bounds": {},
@@ -100,9 +100,9 @@
         "scal": {}
     },
     "ltsa": {
-        "bounds": {"n_neighbors": [5, 11] },
-        "default": {"n_neighbors": 5 },
-        "scal": {"n_neighbors": 5 }
+        "bounds": { "n_neighbors": [5, 11] },
+        "default": { "n_neighbors": 5 },
+        "scal": { "n_neighbors": 5 }
     },
     "le": {
         "bounds": {},
@@ -110,8 +110,8 @@
         "scal": {}
     },
     "mlle": {
-        "bounds": {"n_neighbors": [5, 11] },
-        "default": {"n_neighbors": 5 },
+        "bounds": { "n_neighbors": [5, 11] },
+        "default": { "n_neighbors": 5 },
         "scal": {"n_neighbors": 5 }
     },
     "nmds": {
@@ -120,19 +120,14 @@
         "scal": {}
     },
     "nmf": {
-        "bounds": {},
-        "default": {},
-        "scal": {}
-    },
-    "nmf_nndsvdar": {
-        "bounds": {},
-        "default": {},
-        "scal": {}
+        "bounds": { "init": ["random", "nndsvdar"] },
+        "default": { "init": "nndsvd" },
+        "scal": { "init": "nndsvd" }
     },
     "spca": {
-        "bounds": {},
-        "default": {},
-        "scal": {}
+        "bounds": { "alpha": [0.01, 0.5]},
+        "default": { "alpha": 1 },
+        "scal": { "alpha": 1 }
     },
     "srp": {
         "bounds": {},
@@ -144,29 +139,69 @@
         "default": {},
         "scal": {}
     },
-    "tapkee_dm": {
-        "bounds": {"t": [2, 10], "width": [1.0, 10.0]},
-        "default": {"t": 2, "width": 1.0 },
-        "scal": {"t": 2, "width": 1.0 }
+    "dm": {
+        "bounds": { "t": [2, 10], "width": [1.0, 10.0] },
+        "default": { "t": 2, "width": 1.0 },
+        "scal": { "t": 2, "width": 1.0 }
     },
-    "tapkee_lltsa": {
-        "bounds": {"n_neighbors": [4, 11] },
-        "default": {"n_neighbors": 10 },
-        "scal": {"n_neighbors": 10 }
+    "lltsa": {
+        "bounds": { "n_neighbors": [4, 11] },
+        "default": { "n_neighbors": 10 },
+        "scal": { "n_neighbors": 10 }
     },
     "tapkee_lmds": {
-        "bounds": {"n_neighbors": [4, 11] },
-        "default": {"n_neighbors": 10 },
-        "scal": {"n_neighbors": 10 }
+        "bounds": { "n_neighbors": [4, 11] },
+        "default": { "n_neighbors": 10 },
+        "scal": { "n_neighbors": 10 }
     },
-    "tapkee_lpp": {
-        "bounds": {"n_neighbors": [4, 11] },
-        "default": {"n_neighbors": 10 },
-        "scal": {"n_neighbors": 10 }
+    "lpp": {
+        "bounds": { "n_neighbors": [4, 11] },
+        "default": { "n_neighbors": 10 },
+        "scal": { "n_neighbors": 10 }
     },
-    "tapkee_spe": {
-        "bounds": {"n_neighbors": [6, 18], "n_updates": [20, 70] },
-        "default": {"n_neighbors": 12, "n_updates": 20 },
-        "scal": {"n_neighbors": 12, "n_updates": 20 }
-    } 
+    "spe": {
+        "bounds": { "n_neighbors": [6, 18], "n_updates": [20, 70] },
+        "default": { "n_neighbors": 12, "n_updates": 20 },
+        "scal": { "n_neighbors": 12, "n_updates": 20 }
+    },
+    "ppca": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "gda": {
+        "bounds": { "kernel": ["gauss", "linear"]},
+        "default": { "kernel": "gauss" },
+        "scal": { "kernel": "gauss" }
+    },
+    "mcml": {
+        "bounds": {},
+        "default": {},
+        "scal": {}
+    },
+    "llc": {
+        "bounds": { "k": [8, 12], "n_analyzers": [10, 20] },
+        "default": { "k": 12, "n_analyzers": 20 },
+        "scal": { "k": 12, "n_analyzers": 20 }
+    },
+    "lmnn": {
+        "bounds": { "k": [3, 5, 7] },
+        "default": { "k": 3 },
+        "scal": { "k": 3 }
+    },
+    "mc": {
+        "bounds": { "n_analyzers": [10, 20] },
+        "default": { "n_analyzers": 40 },
+        "scal": { "n_analyzers": 40 }
+    },
+    "gplvm": {
+        "bounds": { "sigma": [0.5, 1.0, 2.0] },
+        "default": { "sigma": 1.0 },
+        "scal": { "sigma": 1.0 }
+    },
+    "lmvu": {
+        "bounds": { "k1": [3, 5, 7], "k2": [8, 12, 15] },
+        "default": { "k1": 3, "k2": 2 },
+        "scal": { "k1": 3, "k2": 2 }
+    }
 }
