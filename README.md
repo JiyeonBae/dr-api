@@ -72,15 +72,16 @@ After setting up the environment, you can use the core functions from the `dr.py
 ```python
 from dr import *
 
+# Generate a random dataset with 100 samples and 5 features
+X = np.random.rand(100, 5)
+
 # Testing the UMAP function
 umap_result = run_umap(X, n_neighbors=5, min_dist=0.1, init="random")
-print("UMAP Result:")
-print(umap_result)
+print("UMAP Result:", umap_result)
 
 # Testing the PaCMAP function
 pacmap_result = run_pacmap(X, n_neighbors=5, MN_ratio=0.5, FP_ratio=0.5, init="random")
-print("\nPaCMAP Result:")
-print(pacmap_result)
+print("\nPaCMAP Result:", pacmap_result)
 ```
 
 ## Acknowledgments
