@@ -57,6 +57,15 @@ Run the following command to install Windows Subsystem for Linux (WSL)
     ```bash
     CFLAGS=-I/C:/Octave/Octave-4.4.1/include/octave-4.4.1/octave
     ```
+## Hyperparameters and Configuration
+
+The hyperparameters required for each Dimensionality Reduction technique are stored in the `_metadata.json` file. This file includes:
+```
+- **Recommended Ranges**: Suggested ranges for each hyperparameter to experiment with, depending on the dataset.
+- **Default Values**: Predefined settings that are typically used for optimal performance.
+```
+For example, the `n_neighbors` hyperparameter for UMAP has a default value of 5, with a recommended range of 2 to 100. Users can adjust these values based on the dataset and specific needs.
+
 
 ## Usage Example
 After setting up the environment, you can use the core functions from the `dr.py` file as follows:
