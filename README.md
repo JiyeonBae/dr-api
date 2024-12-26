@@ -47,7 +47,7 @@ Run the following command to install Windows Subsystem for Linux (WSL)
 - Download and install from: https://ftp.gnu.org/gnu/octave/windows/
 
 ### Step 5: Configure Octave Path
-1. Open the file `_drtoolbox.py` in a text editor.
+1. Open the file `_drtoolbox.py`.
 2. Locate the following line in the file and replace the path with the location of your Octave installation directory.:
    ```python
    octave_path = "C:/Octave/Octave-4.4.1/bin/octave.bat"
