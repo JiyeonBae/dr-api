@@ -89,7 +89,7 @@ print("\nPaCMAP Result:", pacmap_result)
 
 This project was inspired by and incorporates code and ideas from the following repositories:
 
-**1. Dimensionality Reduction techniques:** https://github.com/hj-n/umato_exp/blob/master/_final_exp/_dr_provider.py  
+**1. Dimensionality Reduction techniques and the range of Hyperparameters:** https://github.com/hj-n/umato_exp/blob/master/_final_exp/_dr_provider.py  
 **2. Dimensionality Reduction techniques, including Tapkee build files and drtoolbox:** https://github.com/mespadoto/proj-quant-eval/blob/master/code/01_data_collection/projections.py
 
 These repositories provided foundational code for various Dimensionality Reduction techniques, which were adapted and integrated into this project for ease of use and efficiency.
