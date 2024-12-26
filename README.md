@@ -68,10 +68,13 @@ For example, the `n_neighbors` hyperparameter for UMAP has a default value of 15
 ## Usage Example
 After setting up the environment, you can use the core functions from the `dr.py` file as follows:
 ```python
+from sklearn.datasets import load_iris
 from dr import *
 
-# Generate a random dataset with 100 samples and 5 features
-X = np.random.rand(100, 5)
+# Load your dataset (here we're using the Iris dataset as an example)
+iris = load_iris()
+X = iris.data  # This is the feature matrix
+y = iris.target  # The target labels (not used in dimensionality reduction, but could be useful for visualization)
 
 # Testing the UMAP function
 umap_result = run_umap(X, n_neighbors=5, min_dist=0.1, init="random")
@@ -81,7 +84,7 @@ print("UMAP Result:", umap_result)
 pacmap_result = run_pacmap(X, n_neighbors=5, MN_ratio=0.5, FP_ratio=0.5, init="random")
 print("\nPaCMAP Result:", pacmap_result)
 
-# The results will be the data with shape (100, 2).
+# The results will be the data with shape (n_samples, 2) as a 2D projection.
 ```
 
 
