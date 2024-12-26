@@ -27,9 +27,9 @@ if gpus:
 # end set seed
 
 class ModelSize(Enum):
-    SMALL = 0
-    MEDIUM = 1
-    LARGE = 2
+    SMALL = "SMALL"
+    MEDIUM = "MEDIUM"
+    LARGE = "LARGE"
 
 class AutoencoderProjection(BaseEstimator, TransformerMixin):
     def __init__(self, model_size=ModelSize.SMALL):
