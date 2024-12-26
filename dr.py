@@ -230,3 +230,13 @@ def run_lmvu(X, k1, k2):
     k2 = int(k2)
     reducer = drtoolbox.LandmarkMVU(k1=k1, k2=k2)
     return reducer.fit_transform(X)
+
+
+# 테스트 데이터 생성
+X = np.random.rand(50, 5)  # 100개 샘플, 10개 특성
+
+# 차원 축소
+reduced_X = run_ae(X, model_size=ae.ModelSize.SMALL)
+
+# 결과
+print("차원 축소된 데이터 차원: ", reduced_X)
