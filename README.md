@@ -83,7 +83,7 @@ print("UMAP Result:", umap_result)
 pacmap_result = run_pacmap(X, n_neighbors=5, MN_ratio=0.5, FP_ratio=0.5, init="random")
 print("\nPaCMAP Result:", pacmap_result)
 
-The results will be the data with shape (100, 2).
+# The results will be the data with shape (100, 2).
 ```
 
 
