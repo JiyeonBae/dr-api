@@ -1,207 +1,166 @@
 {
     "umap": {
-        "bounds": { "n_neighbors": [2, 100], "min_dist": [0.01, 0.99], "init": ["spectral", "random"] },
-        "scal": { "n_neighbors": 15, "min_dist": 0.1, "init": "spectral" },
+        "bounds": { "n_neighbors": [2, 100], "min_dist": [0.001, 0.5], "init": ["spectral", "random"] },
         "default": { "n_neighbors": 15, "min_dist": 0.1, "init": "spectral" }
     },
     "pacmap": {
-        "bounds": { "n_neighbors": [2, 100], "MN_ratio": [0.1, 5], "FP_ratio": [0.1, 5] },
-        "scal": { "n_neighbors": 15, "MN_ratio": 0.5, "FP_ratio": 2.0 },
+        "bounds": { "n_neighbors": [2, 100], "MN_ratio": [0.3, 0.7], "FP_ratio": [1.0, 3.0] },
         "default": { "n_neighbors": 10, "MN_ratio": 0.5, "FP_ratio": 2.0 }
     },
     "trimap": {
-        "bounds": { "n_inliers": [2, 100], "n_outliers": [2, 10] },
-        "scal": { "n_inliers": 12, "n_outliers": 4 },
-        "default": { "n_inliers": 12, "n_outliers": 4 }
+        "bounds": { "n_inliers": [5, 50], "n_outliers": [1, 20] },
+        "default": { "n_inliers": 10, "n_outliers": 5 }
     },
     "tsne": {
         "bounds": { "perplexity": [5, 50] },
-        "scal": { "perplexity": 30 },
         "default": { "perplexity": 30 }
     },
     "umato": {
         "bounds": { "n_neighbors": [2, 100], "min_dist": [0.01, 0.99], "hub_num": [20, 400] },
-        "scal": { "n_neighbors": 15, "min_dist": 0.1, "hub_num": 75 },
-        "default": { "n_neighbors": 15, "min_dist": 0.1, "hub_num": 75 }
+        "default": { "n_neighbors": 15, "min_dist": 0.1, "hub_num": 200 }
     },
     "pca": {
         "bounds": {},
-        "default": {},
-        "scal": {}
+        "default": {}
     },
     "mds": {
-        "bounds": {},
-        "default": {},
-        "scal": {}
+        "bounds": { "n_init": [2, 4], "max_iter": [300, 500] },
+        "default": { "n_init": 4, "max_iter": 300 }
     },
     "isomap": {
         "bounds": { "n_neighbors": [2, 100] },
-        "scal": { "n_neighbors": 15 },
-        "default": { "n_neighbors": 15 }
+        "default": { "n_neighbors": 5 }
     },
     "lle": {
-        "bounds": { "n_neighbors": [2, 100] },
-        "scal": { "n_neighbors": 15 },
-        "default": { "n_neighbors": 15 }
+        "bounds": { "n_neighbors": [2, 100], "max_iter": [100, 200] },
+        "default": { "n_neighbors": 5, "max_iter": 100 }
     },
     "lamp": {
         "bounds": {},
-        "scal": {},
         "default": {}
     },
     "lmds": {
         "bounds": { "hub_num": [20, 400] },
-        "scal": { "hub_num": 75 },
         "default": { "hub_num": 75 }
     },
     "ae": {
         "bounds": { "model_size": ["SMALL", "MEDIUM", "LARGE"] },
-        "default": { "model_size": "SMALL" },
-        "scal": { "model_size": "SMALL" }
+        "default": { "model_size": "SMALL" }
     },
     "fa": {
-        "bounds": {},
-        "default": {},
-        "scal": {}
+        "bounds": { "max_iter": [1000, 2000] },
+        "default": { "max_iter": 100 }
     },
     "fica": {
-        "bounds": {},
-        "default": {},
-        "scal": {}
+        "bounds": { "fun": ["logcosh", "exp"], "max_iter": [200, 400] },
+        "default": {"fun": "logcosh", "max_iter": 200 }
     },
     "grp": {
         "bounds": {},
-        "default": {},
-        "scal": {}
+        "default": {}
     },
     "hlle": {
-        "bounds": { "n_neighbors": [7, 11] },
-        "default": { "n_neighbors": 7 },
-        "scal": { "n_neighbors": 7 }
+        "bounds": { "n_neighbors": [2, 100], "max_iter": [100, 200] },
+        "default": { "n_neighbors": 5, "max_iter": 100 }
     },
     "ipca": {
         "bounds": {},
-        "default": {},
-        "scal": {}
+        "default": {}
     },
     "kpcapol": {
         "bounds": { "degree": [2, 5] },
-        "default": { "degree": 3 },
-        "scal": { "degree": 3 }
+        "default": { "degree": 3 }
     },
     "kpcarbf": {
         "bounds": {},
-        "default": {},
-        "scal": {}
+        "default": {}
     },
     "kpcasig": {
         "bounds": {},
-        "default": {},
-        "scal": {}
+        "default": {}
     },
     "ltsa": {
-        "bounds": { "n_neighbors": [5, 11] },
-        "default": { "n_neighbors": 5 },
-        "scal": { "n_neighbors": 5 }
+        "bounds": { "n_neighbors": [2, 100], "max_iter": [100, 200] },
+        "default": { "n_neighbors": 5, "max_iter": 100 }
     },
     "le": {
         "bounds": {},
-        "default": {},
-        "scal": {}
+        "default": {}
     },
     "mlle": {
-        "bounds": { "n_neighbors": [5, 11] },
-        "default": { "n_neighbors": 5 },
-        "scal": {"n_neighbors": 5 }
+        "bounds": { "n_neighbors": [2, 100], "max_iter": [100, 200] },
+        "default": { "n_neighbors": 5,"max_iter": 100 }
     },
     "nmds": {
-        "bounds": {},
-        "default": {},
-        "scal": {}
+        "bounds": { "n_init": [2, 4], "max_iter": [300, 500] },
+        "default": { "n_init": 4, "max_iter": 300 }
     },
     "nmf": {
-        "bounds": { "init": ["random", "nndsvdar"] },
-        "default": { "init": "nndsvd" },
-        "scal": { "init": "nndsvd" }
+        "bounds": { "init": ["random", "nndsvdar"], "max_iter": [200, 400], "alpha": [0.0, 0.5], "l1_ratio": [0.0, 0.5]},
+        "default": { "init": "nndsvdar", "max_iter": 200, "alpha": 0.0, "l1_ratio": 0.0}
     },
     "spca": {
-        "bounds": { "alpha": [0.01, 0.5]},
-        "default": { "alpha": 1 },
-        "scal": { "alpha": 1 }
+        "bounds": { "alpha": [0.01, 0.5], "ridge_alpha": [0.05, 0.5], "max_iter": [1000, 2000]},
+        "default": { "alpha": 1, "ridge_alpha": 0.01, "max_iter": 1000 }
     },
     "srp": {
         "bounds": {},
-        "default": {},
-        "scal": {}
+        "default": {}
     },
     "tsvd": {
-        "bounds": {},
-        "default": {},
-        "scal": {}
+        "bounds": { "n_iter": [5, 10] },
+        "default": { "n_iter": 5 }
     },
     "dm": {
         "bounds": { "t": [2, 10], "width": [1.0, 10.0] },
-        "default": { "t": 2, "width": 1.0 },
-        "scal": { "t": 2, "width": 1.0 }
+        "default": { "t": 2, "width": 1.0 }
     },
     "lltsa": {
-        "bounds": { "n_neighbors": [4, 11] },
-        "default": { "n_neighbors": 10 },
-        "scal": { "n_neighbors": 10 }
+        "bounds": { "n_neighbors": [2, 100] },
+        "default": { "n_neighbors": 10 }
     },
     "tapkee_lmds": {
-        "bounds": { "n_neighbors": [4, 11] },
-        "default": { "n_neighbors": 10 },
-        "scal": { "n_neighbors": 10 }
+        "bounds": { "n_neighbors": [2, 100] },
+        "default": { "n_neighbors": 10 }
     },
     "lpp": {
-        "bounds": { "n_neighbors": [4, 11] },
-        "default": { "n_neighbors": 10 },
-        "scal": { "n_neighbors": 10 }
+        "bounds": { "n_neighbors": [2, 100] },
+        "default": { "n_neighbors": 10 }
     },
     "spe": {
-        "bounds": { "n_neighbors": [6, 18], "n_updates": [20, 70] },
-        "default": { "n_neighbors": 12, "n_updates": 20 },
-        "scal": { "n_neighbors": 12, "n_updates": 20 }
+        "bounds": { "n_neighbors": [2, 100], "n_updates": [20, 70] },
+        "default": { "n_neighbors": 12, "n_updates": 20 }
     },
     "ppca": {
-        "bounds": {},
-        "default": {},
-        "scal": {}
+        "bounds": { "max_iter": [200, 400] },
+        "default": { "max_iter": 200 }
     },
     "gda": {
         "bounds": { "kernel": ["gauss", "linear"]},
-        "default": { "kernel": "gauss" },
-        "scal": { "kernel": "gauss" }
+        "default": { "kernel": "gauss" }
     },
     "mcml": {
         "bounds": {},
-        "default": {},
-        "scal": {}
+        "default": {}
     },
     "llc": {
-        "bounds": { "k": [8, 12], "n_analyzers": [10, 20] },
-        "default": { "k": 12, "n_analyzers": 20 },
-        "scal": { "k": 12, "n_analyzers": 20 }
+        "bounds": { "k": [8, 12], "n_analyzers": [10, 20], "max_iter": [200, 400] },
+        "default": { "k": 12, "n_analyzers": 20, "max_iter": 200 }
     },
     "lmnn": {
-        "bounds": { "k": [3, 5, 7] },
-        "default": { "k": 3 },
-        "scal": { "k": 3 }
+        "bounds": { "k": [3, 7] },
+        "default": { "k": 3 }
     },
     "mc": {
-        "bounds": { "n_analyzers": [10, 20] },
-        "default": { "n_analyzers": 40 },
-        "scal": { "n_analyzers": 40 }
+        "bounds": { "n_analyzers": [10, 20], "max_iter": [200, 400] },
+        "default": { "n_analyzers": 40 }
     },
     "gplvm": {
-        "bounds": { "sigma": [0.5, 1.0, 2.0] },
-        "default": { "sigma": 1.0 },
-        "scal": { "sigma": 1.0 }
+        "bounds": { "sigma": [0.5, 2.0] },
+        "default": { "sigma": 1.0 }
     },
     "lmvu": {
-        "bounds": { "k1": [3, 5, 7], "k2": [8, 12, 15] },
-        "default": { "k1": 3, "k2": 2 },
-        "scal": { "k1": 3, "k2": 2 }
+        "bounds": { "k1": [3, 7], "k2": [8, 15] },
+        "default": { "k1": 3, "k2": 2 }
     }
 }
