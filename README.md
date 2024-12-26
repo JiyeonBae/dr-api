@@ -59,8 +59,7 @@ Run the following command to install Windows Subsystem for Linux (WSL)
     ```
 
 ## Usage Example
-After setting up the environment, you can use the API as follows:
-
+After setting up the environment, you can use the core functions from the `dr.py` file as follows:
 ```python
 from dr import *
 
