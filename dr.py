@@ -17,7 +17,6 @@ import _drtoolbox as drtoolbox
 
 from scipy.spatial.distance import cdist
 
-
 def run_umap(X, n_neighbors, min_dist, init):
 	n_neighbors = int(n_neighbors)
 	min_dist = float(min_dist)
@@ -60,19 +59,20 @@ def run_pca(X):
 	reducer = PCA(n_components=2)
 	return reducer.fit_transform(X)
 
-def run_mds(X):
-	reducer = MDS(n_components=2)
+def run_mds(X, n_init, max_iter):
+	reducer = MDS(n_components=2, n_init=n_init, metric=True, max_iter=max_iter)
 	return reducer.fit_transform(X)
 
 def run_isomap(X, n_neighbors):
 	n_neighbors = int(n_neighbors)
-	reducer = Isomap(n_neighbors=n_neighbors, n_components=2, n_jobs=-1)
+	reducer = Isomap(n_neighbors=n_neighbors, n_components=2, n_jobs=-1, eigen_solver="dense")
 	return reducer.fit_transform(X)
 
-def run_lle(X, n_neighbors):
-	n_neighbors = int(n_neighbors)
-	reducer = LocallyLinearEmbedding(n_neighbors=n_neighbors, n_components=2)
-	return reducer.fit_transform(X)
+def run_lle(X, n_neighbors, max_iter):
+    n_neighbors = int(n_neighbors)
+    max_iter = int(max_iter)
+    reducer = LocallyLinearEmbedding(n_neighbors=n_neighbors, n_components=2, max_iter=max_iter, eigen_solver="dense")
+    return reducer.fit_transform(X)
 
 def run_lamp(X):
 	reducer = lamp.Lamp(Xdata = X)
@@ -91,25 +91,29 @@ def run_lmds(X, hub_num):
 
 ######
 def run_ae(X, model_size):
+    model_size = ae.ModelSize(model_size)
     reducer = ae.AutoencoderProjection(model_size=model_size)
     return reducer.fit_transform(X)
 
-def run_fa(X):
-    reducer = FactorAnalysis(n_components=2)
+def run_fa(X, max_iter):
+    max_iter = int(max_iter)
+    reducer = FactorAnalysis(n_components=2, max_iter=max_iter)
     return reducer.fit_transform(X)
 
-def run_fica(X):
-    reducer = FastICA(n_components=2)
+def run_fica(X, fun, max_iter):
+    max_iter=int(max_iter)
+    reducer = FastICA(n_components=2, fun=fun, max_iter=max_iter)
     return reducer.fit_transform(X)
 
 def run_grp(X):
     reducer = GaussianRandomProjection(n_components=2)
     return reducer.fit_transform(X)
 
-def run_hlle(X, n_neighbors):
-	n_neighbors = int(n_neighbors)
-	reducer = LocallyLinearEmbedding(n_neighbors=n_neighbors, n_components=2, method="hessian")
-	return reducer.fit_transform(X)
+def run_hlle(X, n_neighbors, max_iter):
+    n_neighbors = int(n_neighbors)
+    max_iter = int(max_iter)
+    reducer = LocallyLinearEmbedding(n_neighbors=n_neighbors, max_iter=max_iter, n_components=2, method="hessian", eigen_solver="dense")
+    return reducer.fit_transform(X)
 
 def run_ipca(X):
     reducer = IncrementalPCA(n_components=2)
@@ -128,39 +132,46 @@ def run_kpcasig(X):
     reducer = KernelPCA(n_components=2, degree=3, kernel="sigmoid")
     return reducer.fit_transform(X)
 
-def run_ltsa(X, n_neighbors):
-	n_neighbors = int(n_neighbors)
-	reducer = LocallyLinearEmbedding(n_neighbors=n_neighbors, n_components=2, method="ltsa")
-	return reducer.fit_transform(X)
+def run_ltsa(X, n_neighbors, max_iter):
+    n_neighbors = int(n_neighbors)
+    max_iter = int(max_iter)
+    reducer = LocallyLinearEmbedding(n_neighbors=n_neighbors, n_components=2, method="ltsa", max_iter=max_iter, eigen_solver="dense")
+    return reducer.fit_transform(X)
 
 def run_le(X):
     reducer = SpectralEmbedding(n_components=2)
     return reducer.fit_transform(X)
 
-def run_mlle(X, n_neighbors):
-	n_neighbors = int(n_neighbors)
-	reducer = LocallyLinearEmbedding(n_neighbors=n_neighbors, n_components=2, method="modified")
+def run_mlle(X, n_neighbors, max_iter):
+    n_neighbors = int(n_neighbors)
+    max_iter = int(max_iter)
+    reducer = LocallyLinearEmbedding(n_neighbors=n_neighbors, n_components=2, method="modified", max_iter=max_iter, eigen_solver="dense")
+    return reducer.fit_transform(X)
+
+def run_nmds(X, n_init, max_iter):
+	reducer = MDS(n_components=2, n_init=n_init, metric=False, max_iter=max_iter)
 	return reducer.fit_transform(X)
 
-def run_nmds(X):
-    reducer = MDS(n_components=2, metric=False)
-    return reducer.fit_transform(X)
-
-def run_nmf(X, init):
-    reducer = NMF(n_components=2, init=init)
-    return reducer.fit_transform(X)
-
-def run_spca(X, alpha):
+def run_nmf(X, max_iter, alpha, l1_ratio, init):
+    max_iter = int(max_iter)
+    l1_ratio = float(l1_ratio)
     alpha = float(alpha)
-    reducer = SparsePCA(n_components=2, alpha=alpha)
+    reducer = NMF(n_components=2, max_iter=max_iter, alpha_W=alpha, alpha_H=alpha, l1_ratio=l1_ratio, init=init)
+
+def run_spca(X, alpha, ridge_alpha, max_iter):
+    alpha = float(alpha)
+    ridge_alpha = float(ridge_alpha)
+    max_iter = int(max_iter)
+    reducer = SparsePCA(n_components=2, alpha=alpha, ridge_alpha=ridge_alpha, max_iter=max_iter)
     return reducer.fit_transform(X)
 
 def run_srp(X):
     reducer = SparseRandomProjection(n_components=2)
     return reducer.fit_transform(X)
 
-def run_tsvd(X):
-    reducer = TruncatedSVD(n_components=2)
+def run_tsvd(X, n_iter):
+    n_iter=int(n_iter)
+    reducer = TruncatedSVD(n_components=2, n_iter=n_iter)
     return reducer.fit_transform(X)
 
 #tapkee
@@ -192,8 +203,9 @@ def run_spe(X, n_neighbors, n_updates):
     return reducer.fit_transform(X)
 
 #drtoolbox
-def run_ppca(X):
-    reducer = drtoolbox.ProbPCA()
+def run_ppca(X, max_iter):
+    max_iter = int(max_iter)
+    reducer = drtoolbox.ProbPCA(max_iter=max_iter)
     return reducer.fit_transform(X)
 
 def run_gda(X, kernel):
@@ -204,10 +216,11 @@ def run_mcml(X):
     reducer = drtoolbox.MCML()
     return reducer.fit_transform(X)
 
-def run_llc(X, k, n_analyzers):
+def run_llc(X, k, n_analyzers, max_iter):
     k = int(k)
     n_analyzers = int(n_analyzers)
-    reducer = drtoolbox.LLC(k=k, n_analyzers=n_analyzers)
+    max_iter = int(max_iter)
+    reducer = drtoolbox.LLC(k=k, n_analyzers=n_analyzers, max_iter=max_iter)
     return reducer.fit_transform(X)
 
 def run_lmnn(X, k):
@@ -215,9 +228,10 @@ def run_lmnn(X, k):
     reducer = drtoolbox.LMNN(k=k)
     return reducer.fit_transform(X)
 
-def run_mc(X, n_analyzers):
+def run_mc(X, n_analyzers, max_iter):
     n_analyzers = int(n_analyzers)
-    reducer = drtoolbox.ManifoldChart(n_analyzers=n_analyzers)
+    max_iter = int(max_iter)
+    reducer = drtoolbox.ManifoldChart(n_analyzers=n_analyzers, max_iter=max_iter)
     return reducer.fit_transform(X)
 
 def run_gplvm(X, sigma):
@@ -230,13 +244,3 @@ def run_lmvu(X, k1, k2):
     k2 = int(k2)
     reducer = drtoolbox.LandmarkMVU(k1=k1, k2=k2)
     return reducer.fit_transform(X)
-
-
-# 테스트 데이터 생성
-X = np.random.rand(50, 5)  # 100개 샘플, 10개 특성
-
-# 차원 축소
-reduced_X = run_ae(X, model_size=ae.ModelSize.SMALL)
-
-# 결과
-print("차원 축소된 데이터 차원: ", reduced_X)
