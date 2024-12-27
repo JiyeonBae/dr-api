@@ -1,10 +1,10 @@
 {
     "umap": {
-        "bounds": { "n_neighbors": [2, 100], "min_dist": [0.001, 0.5], "init": ["spectral", "random"] },
+        "bounds": { "n_neighbors": [2, 100], "min_dist": [0.01, 0.99], "init": ["spectral", "random"] },
         "default": { "n_neighbors": 15, "min_dist": 0.1, "init": "spectral" }
     },
     "pacmap": {
-        "bounds": { "n_neighbors": [2, 100], "MN_ratio": [0.3, 0.7], "FP_ratio": [1.0, 3.0] },
+        "bounds": { "n_neighbors": [2, 100], "MN_ratio": [0.1, 5.0], "FP_ratio": [0.1, 5.0] },
         "default": { "n_neighbors": 10, "MN_ratio": 0.5, "FP_ratio": 2.0 }
     },
     "trimap": {
