@@ -73,8 +73,7 @@ from dr import *
 
 # Load your dataset (here we're using the Iris dataset as an example)
 iris = load_iris()
-X = iris.data  # This is the feature matrix
-y = iris.target  # The target labels (not used in dimensionality reduction, but could be useful for visualization)
+X = iris.data
 
 # Testing the UMAP function
 umap_result = run_umap(X, n_neighbors=5, min_dist=0.1, init="random")
