@@ -246,9 +246,3 @@ def run_lmvu(X, k1, k2):
     k2 = int(k2)
     reducer = drtoolbox.LandmarkMVU(k1=k1, k2=k2)
     return reducer.fit_transform(X)
-
-
-def create_sample_data():
-    np.random.seed(42)
-    X = np.abs(np.random.randn(10, 5))  # 10x5 크기의 비음수 데이터 생성
-    return X
