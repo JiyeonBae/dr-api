@@ -17,6 +17,7 @@ import _drtoolbox as drtoolbox
 
 from scipy.spatial.distance import cdist
 
+
 def run_umap(X, n_neighbors, min_dist, init):
 	n_neighbors = int(n_neighbors)
 	min_dist = float(min_dist)
@@ -157,6 +158,7 @@ def run_nmf(X, max_iter, alpha, l1_ratio, init):
     l1_ratio = float(l1_ratio)
     alpha = float(alpha)
     reducer = NMF(n_components=2, max_iter=max_iter, alpha_W=alpha, alpha_H=alpha, l1_ratio=l1_ratio, init=init)
+    return reducer.fit_transform(X)
 
 def run_spca(X, alpha, ridge_alpha, max_iter):
     alpha = float(alpha)
@@ -244,3 +246,9 @@ def run_lmvu(X, k1, k2):
     k2 = int(k2)
     reducer = drtoolbox.LandmarkMVU(k1=k1, k2=k2)
     return reducer.fit_transform(X)
+
+
+def create_sample_data():
+    np.random.seed(42)
+    X = np.abs(np.random.randn(10, 5))  # 10x5 크기의 비음수 데이터 생성
+    return X
