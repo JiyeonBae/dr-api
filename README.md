@@ -36,7 +36,7 @@ This project was developed and tested in the following environment:
    conda env create -f dr_env.yml
    conda activate dr_api
    ```
-- This will create a Conda environment and automatically install all the required libraries and dependencies specified in the `dr_api.yml` file. The YAML file contains a list of necessary packages, their versions, and the channels to install from. Once the environment is activated, you'll have access to all the required libraries for the project.
+- This will create a Conda environment and automatically install all the required libraries and dependencies specified in the `dr_env.yml` file. The YAML file contains a list of necessary packages, their versions, and the channels to install from. Once the environment is activated, you'll have access to all the required libraries for the project.
 
 ### Step 3: Install WSL for Using Tapkee Prebuilt Files
 Run the following command to install Windows Subsystem for Linux (WSL)
