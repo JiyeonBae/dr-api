@@ -1,6 +1,6 @@
 # Dimensionality Reduction API
 
-This project provides various dimensionality reduction techniques using a Python-based API. The Conda environment file (`dr_api.yml`) ensures consistent and reproducible dependencies.
+This project provides various dimensionality reduction techniques using a Python-based API. The Conda environment file (`dr_env.yml`) ensures consistent and reproducible dependencies.
 
 
 ## Features
@@ -86,8 +86,11 @@ print("\nPaCMAP Result:", pacmap_result)
 
 ## Acknowledgments
 
-These repositories provided foundational implementations for various Dimensionality Reduction techniques and their hyperparameter ranges.
+I sincerely thank the authors of the following repositories for providing foundational implementations for various Dimensionality Reduction techniques and their hyperparameter ranges:
 
-**1. Dimensionality Reduction techniques and the range of Hyperparameters:** https://github.com/hj-n/umato_exp/blob/master/_final_exp/_dr_provider.py  
-**2. Dimensionality Reduction techniques, including Tapkee build files and drtoolbox:** https://github.com/mespadoto/proj-quant-eval/blob/master/code/01_data_collection/projections.py
+1. **Dimensionality Reduction techniques and the range of Hyperparameters**  
+   Repository: [hj-n/umato_exp](https://github.com/hj-n/umato_exp/blob/master/_final_exp/_dr_provider.py)
+
+2. **Dimensionality Reduction techniques, including Tapkee build files and drtoolbox**  
+   Repository: [mespadoto/proj-quant-eval](https://github.com/mespadoto/proj-quant-eval/blob/master/code/01_data_collection/projections.py)
 
