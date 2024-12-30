@@ -48,26 +48,13 @@ Run the following command to install Windows Subsystem for Linux (WSL)
 
 ### Step 5: Configure Octave Path
 
-1. **Set the Octave Path in `_drtoolbox.py`**  
+**Set the Octave Path in `_drtoolbox.py`**  
    - Open the file `_drtoolbox.py`.
    - Locate the following line:
      ```python
      octave_path = "C:/Octave/Octave-4.4.1/bin/octave.bat"
      ```
    - Replace the path with the location of your Octave installation directory if it differs from the above example.
-
-2. **Configure the CFLAGS Environment Variable on Windows**  
-   To ensure proper compilation and execution of code using Octave, set the `CFLAGS` environment variable to point to the Octave include directory.
-  
-    1. **Access the Environment Variables Menu**:
-       - Press `Win + S`, search for **Edit the system environment variables**, and open it.
-       - In the **System Properties** window, click **Environment Variables**.
-    
-    2. **Add the CFLAGS Variable**:
-       - Under **System Variables**, click **New**.
-       - Set the following values:
-         - **Variable Name:** `CFLAGS`
-         - **Variable Value:** `-I"C:\Octave\Octave-4.4.1\include\octave-4.4.1\octave"`
 
      
 ## Hyperparameters and Configuration
