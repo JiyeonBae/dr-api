@@ -59,16 +59,16 @@ Run the following command to install Windows Subsystem for Linux (WSL)
 2. **Configure the CFLAGS Environment Variable on Windows**  
    To ensure proper compilation and execution of code using Octave, set the `CFLAGS` environment variable to point to the Octave include directory.
 
-   1. **Open the Environment Variables Menu:**
-      - Press `Win + S` and search for **Edit the system environment variables**.
-      - Click on **Environment Variables** in the System Properties window.
+   1. **Access the Environment Variables Menu**:
+  - Press `Win + S`, search for **Edit the system environment variables**, and open it.
+  - In the **System Properties** window, click **Environment Variables**.
 
-   2. **Create a New System Variable:**
-      - Under **System Variables**, click **New**.
-      - Set the following values:
-        - **Variable Name:** `CFLAGS`
-        - **Variable Value:** `-I"C:\Octave\Octave-4.4.1\include\octave-4.4.1\octave"`
 
+   2.  **Add the CFLAGS Variable**:
+    - Under **System Variables**, click **New**.
+     - Set the following values:
+       - **Variable Name:** `CFLAGS`
+     
 ## Hyperparameters and Configuration
 
 The hyperparameters required for each Dimensionality Reduction technique are stored in the `_metadata.json` file. 
