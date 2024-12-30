@@ -58,15 +58,12 @@ Run the following command to install Windows Subsystem for Linux (WSL)
 
 2. **Configure the CFLAGS Environment Variable on Windows**  
    Ensure that the `CFLAGS` environment variable points to the Octave include directory.
-
-   **How to Set:**
    - Open the **Environment Variables** menu:
      1. Press `Win + S` and search for "Edit the system environment variables."
      2. Click on **Environment Variables** in the System Properties window.
    - Under **System Variables**, click **New** to create a new variable:
      - **Variable Name:** `CFLAGS`
      - **Variable Value:** `-I"C:\Octave\Octave-4.4.1\include\octave-4.4.1\octave"`
-   - Click **OK** to save the changes.
    - Restart your terminal or command prompt to apply the changes.
 
 ## Hyperparameters and Configuration
