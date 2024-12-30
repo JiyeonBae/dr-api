@@ -25,7 +25,7 @@ This project was developed and tested in the following environment:
 ## Setting up the Conda Environment
 
 ### Step 1: Clone the Repository
-1. Clone the repository:
+
    ```bash
    git clone https://github.com/JiyeonBae/dr-api.git
    ```
