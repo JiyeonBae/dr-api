@@ -33,7 +33,7 @@ This project was developed and tested in the following environment:
 ### Step 2: Create and Activate the Environment
 - Create the Conda environment using the provided YAML file and activate the newly created environment:
    ```bash
-   conda env create -f dr_api.yml
+   conda env create -f dr_env.yml
    conda activate dr_api
    ```
 - This will create a Conda environment and automatically install all the required libraries and dependencies specified in the `dr_api.yml` file. The YAML file contains a list of necessary packages, their versions, and the channels to install from. Once the environment is activated, you'll have access to all the required libraries for the project.
