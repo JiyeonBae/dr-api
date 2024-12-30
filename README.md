@@ -47,16 +47,28 @@ Run the following command to install Windows Subsystem for Linux (WSL)
 - Download and install from: https://ftp.gnu.org/gnu/octave/windows/
 
 ### Step 5: Configure Octave Path
-1. Open the file `_drtoolbox.py`.
-2. Locate the following line in the file and replace the path with the location of your Octave installation directory.:
-   ```python
-   octave_path = "C:/Octave/Octave-4.4.1/bin/octave.bat"
-3. Configure the CFLAGS Environment Variable
-  Ensure that the CFLAGS environment variable points to the Octave include directory. This is required to compile and execute code that uses Octave header files.  
-  For example:
-    ```bash
-    CFLAGS=-I/C:/Octave/Octave-4.4.1/include/octave-4.4.1/octave
-    ```
+
+1. **Set the Octave Path in `_drtoolbox.py`**  
+   - Open the file `_drtoolbox.py`.
+   - Locate the following line:
+     ```python
+     octave_path = "C:/Octave/Octave-4.4.1/bin/octave.bat"
+     ```
+   - Replace the path with the location of your Octave installation directory if it differs from the above example.
+
+2. **Configure the CFLAGS Environment Variable on Windows**  
+   Ensure that the `CFLAGS` environment variable points to the Octave include directory.
+
+   **How to Set:**
+   - Open the **Environment Variables** menu:
+     1. Press `Win + S` and search for "Edit the system environment variables."
+     2. Click on **Environment Variables** in the System Properties window.
+   - Under **System Variables**, click **New** to create a new variable:
+     - **Variable Name:** `CFLAGS`
+     - **Variable Value:** `-I"C:\Octave\Octave-4.4.1\include\octave-4.4.1\octave"`
+   - Click **OK** to save the changes.
+   - Restart your terminal or command prompt to apply the changes.
+
 ## Hyperparameters and Configuration
 
 The hyperparameters required for each Dimensionality Reduction technique are stored in the `_metadata.json` file. 
